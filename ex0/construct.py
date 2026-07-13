@@ -9,8 +9,8 @@ def check_virtual_env() -> None:
     is_venv: bool = sys.prefix != sys.base_prefix
 
     if not is_venv:
-        print("MATRIX STATUS: You're still plugged in")
-        print(f"Current Python: {sys.executable}")
+        print("\nMATRIX STATUS: You're still plugged in")
+        print(f"\nCurrent Python: {sys.executable}")
         print("Virtual Environment: None detected")
         print("\nWARNING: You're in the global environment!")
         print("The machines can see everything you install.\n")
@@ -24,8 +24,8 @@ def check_virtual_env() -> None:
         # Safely fetch site packages paths
         site_pkgs: str = site.getsitepackages()[0]
 
-        print("MATRIX STATUS: Welcome to the construct")
-        print(f"Current Python: {sys.executable}")
+        print("\nMATRIX STATUS: Welcome to the construct")
+        print(f"\nCurrent Python: {sys.executable}")
         print(f"Virtual Environment: {env_name}")
         print(f"Environment Path: {sys.prefix}")
         print("\nSUCCESS: You're in an isolated environment!")
