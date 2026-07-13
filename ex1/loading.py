@@ -6,8 +6,8 @@ def check_dependencies() -> bool:
     required_packages = ["pandas", "numpy", "matplotlib"]
     all_ok = True
 
-    print("LOADING STATUS: Loading programs...")
-    print("Checking dependencies:")
+    print("\nLOADING STATUS: Loading programs...")
+    print("\nChecking dependencies:")
 
     for pkg in required_packages:
         try:
