@@ -1,13 +1,13 @@
 import os
 import sys
-from dotenv import load_dotenv
+from dotenv import load_dotenv  # type: ignore
 
 
 def load_matrix_config() -> None:
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    
+
     env_path = os.path.join(script_dir, ".env")
-    
+
     load_dotenv(dotenv_path=env_path)
 
     mode = os.getenv("MATRIX_MODE", "development")
@@ -34,20 +34,20 @@ def load_matrix_config() -> None:
         print("  API Access: WARNING - Missing API Key!")
 
     print(f"  Log Level: {log_level}")
-    
+
     if zion_endpoint:
         print("  Zion Network: Online")
     else:
         print("  Zion Network: Offline")
 
     print("\nEnvironment security check:")
-    
+
     if api_key == "development_secret_key" or not api_key:
         print("[WARNING] You are using default or missing API keys!")
     else:
         print("[OK] No hardcoded secrets detected")
 
-    if os.path.exists("env_path"):
+    if os.path.exists(env_path):
         print("[OK] .env file properly configured")
     else:
         print("[WARNING] .env file missing! Operating on fallback defaults.")

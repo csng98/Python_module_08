@@ -4,8 +4,8 @@ import sys
 
 
 def check_virtual_env() -> None:
-    """Detects and displays Python environment status matching Matrix parameters."""
-    # In a virtual env, sys.prefix points to the env folder
+    """Detects and displays Python environment
+    status matching Matrix parameters."""
     is_venv: bool = sys.prefix != sys.base_prefix
 
     if not is_venv:
@@ -21,7 +21,6 @@ def check_virtual_env() -> None:
         print("Then run this program again.")
     else:
         env_name: str = os.path.basename(sys.prefix)
-        # Safely fetch site packages paths
         site_pkgs: str = site.getsitepackages()[0]
 
         print("\nMATRIX STATUS: Welcome to the construct")

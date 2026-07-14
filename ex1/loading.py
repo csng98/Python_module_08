@@ -21,9 +21,9 @@ def check_dependencies() -> bool:
 
 
 def run_matrix_analysis() -> None:
-    import matplotlib.pyplot as plt
-    import numpy as np
-    import pandas as pd
+    import matplotlib.pyplot as plt  # type: ignore
+    import numpy as np  # type: ignore
+    import pandas as pd  # type: ignore
 
     print("Analyzing Matrix data...")
     print("Processing 1000 data points...")
@@ -57,7 +57,8 @@ if __name__ == "__main__":
         try:
             run_matrix_analysis()
         except Exception as e:
-            print(f"Data stream corruption averted! Error: {e}", file=sys.stderr)
+            print(f"Data stream corruption averted! "
+                  f"Error: {e}", file=sys.stderr)
             sys.exit(1)
     else:
         print_instructions()
