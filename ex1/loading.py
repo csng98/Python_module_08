@@ -40,7 +40,7 @@ def run_matrix_analysis() -> None:
     plt.legend()
 
     plt.savefig("matrix_analysis.png")
-    print("Analysis complete!")
+    print("\nAnalysis complete!")
     print("Results saved to: matrix_analysis.png")
 
 
